@@ -1,0 +1,485 @@
+/* Results Layout updated for Light Theme (Photo 2) */
+.result-main {
+    padding: 30px 100px 60px 100px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.result-title {
+    font-size: 2rem;
+    margin-bottom: 30px;
+    font-weight: 600;
+    color: #1e293b;
+}
+
+.url-highlight {
+    color: #1e293b;
+    font-weight: 600;
+}
+
+#domain-name-display {
+    color: var(--primary-color);
+    font-size: 1.5rem;
+    margin-bottom: 5px;
+    font-weight: 600;
+}
+
+#scan-date-display {
+    color: #64748b;
+    font-size: 0.95rem;
+    margin-bottom: 25px;
+}
+
+/* CARDS */
+.result-card {
+    background: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -2px rgba(0,0,0,0.05);
+    border: 1px solid #e2e8f0;
+    overflow: hidden;
+}
+
+.result-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 40px;
+    gap: 20px;
+}
+
+.result-card-footer {
+    border-top: 1px solid #e2e8f0;
+    background: #f8fafc;
+    padding: 15px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.pdf-btn {
+    background: white;
+    border: 1px solid #cbd5e1;
+    color: var(--black-color);
+    padding: 10px 20px;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    cursor: pointer;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+    transition: all 0.2s;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.pdf-btn:hover {
+    background: #f1f5f9;
+}
+
+.ready-text {
+    color: #475569;
+    font-size: 0.95rem;
+}
+
+/* CSS Monitor */
+.monitor-col {
+    flex: 1;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.css-monitor {
+    width: 250px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.monitor-screen {
+    width: 100%;
+    height: 160px;
+    background: #fff;
+    border: 12px solid #1e293b;
+    border-radius: 10px;
+    border-bottom-width: 15px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.browser-bar {
+    background: #f1f5f9;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.browser-bar .dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #cbd5e1;
+    margin-right: 4px;
+}
+
+.url-bar {
+    background: #fff;
+    border-radius: 10px;
+    height: 12px;
+    flex: 1;
+    margin-left: 10px;
+    font-size: 6px;
+    color: #94a3b8;
+    line-height: 12px;
+    padding-left: 5px;
+    border: 1px solid #e2e8f0;
+}
+
+.browser-content {
+    background: #ffffff;
+    height: 100%;
+    padding: 10px;
+}
+
+.fake-line {
+    background: #e2e8f0;
+    height: 8px;
+    border-radius: 4px;
+    margin-bottom: 8px;
+    width: 100%;
+}
+.fake-line.title {
+    width: 60%;
+    height: 12px;
+    margin-bottom: 12px;
+    margin-left: 40px;
+    background: #cbd5e1;
+}
+.fake-line.short {
+    width: 80%;
+}
+
+.monitor-stand {
+    width: 30px;
+    height: 35px;
+    background: #cbd5e1;
+}
+
+.monitor-base {
+    width: 80px;
+    height: 8px;
+    background: #94a3b8;
+    border-radius: 4px 4px 0 0;
+}
+
+
+/* Stats */
+.stats-col {
+    flex: 1.5;
+    padding: 0 20px;
+}
+
+.progress-stats {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.stat-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.stat-row i {
+    font-size: 1.2rem;
+    width: 20px;
+    text-align: center;
+}
+
+.stat-label {
+    width: 100px;
+    font-weight: 500;
+    color: #475569;
+}
+
+.progress-bar-container {
+    flex: 1;
+    background: #f1f5f9;
+    height: 10px;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.progress-bar {
+    height: 100%;
+    border-radius: 5px;
+    transition: width 0.5s ease-out;
+}
+
+.bg-green { background: #22c55e; }
+.bg-yellow { background: #eab308; }
+.bg-red { background: #ef4444; }
+
+
+/* Donut Chart */
+.chart-col {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.donut-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.donut-chart {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    /* Default background: modified by JS dynamically */
+    background: conic-gradient(#22c55e 0deg 270deg, #f1f5f9 270deg 360deg);
+    -webkit-mask: radial-gradient(circle, transparent 55%, black 56%);
+    mask: radial-gradient(circle, transparent 55%, black 56%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+#center-score {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 3.5rem;
+    font-weight: bold;
+    color: #22c55e;
+    pointer-events: none;
+}
+
+
+/* Explanation block */
+.lambda-explanations {
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 8px;
+    border: 1px solid #e2e8f0;
+}
+
+.explanations-title {
+    font-size: 1.3rem;
+    margin-bottom: 20px;
+    color: #1e293b;
+    font-weight: 600;
+}
+
+.explanation-item {
+    margin-bottom: 20px;
+    background: #f8fafc;
+    padding: 20px;
+    border-left: 5px solid var(--primary-color);
+    border-radius: 4px;
+    border-bottom: 1px solid #e2e8f0;
+    border-right: 1px solid #e2e8f0;
+    border-top: 1px solid #e2e8f0;
+}
+
+.explanation-item h4 {
+    margin: 0 0 10px 0;
+    font-size: 1.15rem;
+    color: #1e293b;
+}
+
+.explanation-item p {
+    margin: 5px 0;
+    line-height: 1.6;
+    color: #475569;
+    font-size: 1.05rem;
+}
+
+.disclaimer-pdf {
+    margin-top: 20px;
+    font-size: 0.9rem;
+    color: #94a3b8;
+}
+
+/* ERROR PAGE STYLE (Photo 1) */
+.error-red-box {
+    background-color: #ffeaea;
+    color: #1e293b;
+    border: 1px solid #ffcccc;
+    padding: 20px;
+    border-radius: 5px;
+    margin-bottom: 25px;
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+.error-white-box {
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 5px;
+    padding: 40px;
+}
+
+.error-row {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-bottom: 15px;
+    font-size: 1.05rem;
+}
+
+.error-url {
+    color: #3b82f6;
+    width: 250px;
+    text-align: left;
+}
+
+.error-code {
+    color: #ef4444;
+    background: #ffeaea;
+    padding: 2px 8px;
+    border-radius: 4px;
+}
+
+
+/* -------------------------------------------
+   MODE PDF (STYLE POUR L'IMPRESSION/EXPORT)
+---------------------------------------------*/
+.report-header-print {
+    display: none;
+    text-align: center;
+    margin-bottom: 40px;
+    padding-bottom: 20px;
+    border-bottom: 2px solid var(--primary-color);
+}
+
+.report-header-print h1 {
+    color: var(--primary-color);
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.report-header-print p {
+    color: #555;
+    font-size: 1.1rem;
+    font-style: italic;
+}
+
+.pdf-mode {
+    background: white !important;
+    color: #111 !important;
+    padding: 20px 40px 40px 40px !important;
+}
+
+.pdf-mode .report-header-print {
+    display: block;
+}
+
+.pdf-mode .result-title,
+.pdf-mode .explanations-title,
+.pdf-mode .explanation-item h4 {
+    color: #111 !important;
+}
+
+.pdf-mode .explanation-item p {
+    color: #333 !important;
+}
+
+.pdf-mode .hide-in-pdf {
+    display: none !important;
+}
+
+.pdf-mode .result-card {
+    box-shadow: none !important;
+    border: none !important;
+}
+
+/* ---- BARRES PDF : remplacées par un badge texte pourcentage ---- */
+.pdf-mode .progress-bar-container {
+    display: none !important;
+}
+
+.pdf-pct {
+    display: none;
+    font-size: 0.95rem;
+    font-weight: 700;
+    margin-left: 6px;
+    min-width: 40px;
+}
+
+.pdf-mode .pdf-pct {
+    display: inline;
+}
+
+/* ---- SCORE PDF : cacher le donut canvas-rendu qui se coupe, afficher texte simple ---- */
+.pdf-mode .donut-wrapper {
+    display: none !important;
+}
+
+.pdf-mode .pdf-score-text {
+    display: block !important;
+}
+
+.pdf-mode .chart-col {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.pdf-mode .lambda-explanations {
+    background: white !important;
+    border: 1px solid #ddd;
+    margin-top: 40px;
+    box-shadow: none !important;
+    page-break-before: always;
+    break-before: always;
+}
+
+.pdf-mode .explanation-item {
+    background: white !important;
+    border: 1px solid #eee;
+}
+
+.pdf-mode details {
+    display: none !important; /* Hide technical blocks entirely from the PDF */
+}
+
+.pdf-mode .disclaimer-pdf {
+    color: #777 !important;
+}
+
+@media (max-width: 900px) {
+    .result-content {
+        flex-direction: column;
+        gap: 40px;
+        align-items: center;
+    }
+
+    .monitor-col, .stats-col, .chart-col {
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .stats-col {
+        text-align: center;
+    }
+    
+    .error-row {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .result-main {
+        padding: 20px;
+    }
+}

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AuditSphere</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body>
+    <div class="bg-shapes">
+        <div class="shape shape-1"></div>
+        <div class="shape shape-2"></div>
+        <div class="shape shape-3"></div>
+        <div class="shape shape-4"></div>
+    </div>
+
+    <header class="header">
+        <a href="index.html" class="home-link"><i class="fas fa-home home-icon"></i></a>
+        <div class="top-bar">AUDITSPHERE</div>
+    </header>
+
+    <main class="home-main">
+
+        <div class="hero-text" style="text-align: center; margin-bottom: 40px; max-width: 800px;">
+            <h1 style="color: var(--black-color); font-size: 2.5rem; margin-bottom: 15px; font-weight: 700;">Sécurisez votre infrastructure dès maintenant</h1>
+            <p style="color: #475569; font-size: 1.15rem; line-height: 1.6;">Générez votre rapport de vulnérabilité en quelques secondes pour identifier les failles de votre système et découvrir comment protéger vos données critiques.</p>
+        </div>
+
+        <form class="right-form" action="resultats.html" method="GET">
+            <div class="url-box">
+                <label for="urlInput">URL ou IP de votre cible :</label>
+                <input type="text" id="urlInput" name="url" placeholder="ex: https://exemple.com ou 192.168.1.10"
+                    required>
+            </div>
+            <div class="actions">
+                <button type="submit" class="btn-analyze">Lancer l'analyse</button>
+                <label class="advanced-mode">
+                    <input type="checkbox" name="advanced">
+                    <span class="custom-checkbox"></span>
+                    <span>Analyse mode avancé</span>
+                </label>
+            </div>
+        </form>
+    </main>
+
+    <section class="features-section">
+        <div class="container">
+            <h2 class="section-title">Pourquoi choisir AuditSphere par KatreLettre ?</h2>
+            <p class="section-subtitle">AuditSphere est la solution d'audit de sécurité automatisée conçue par KatreLettre pour les entreprises qui exigent une protection sans compromis. Notre plateforme simplifie la cybersécurité en transformant des données techniques complexes en un plan d'action clair et priorisé.</p>
+            
+            <h3 class="section-heading">Une vision à 360° de votre surface d'attaque</h3>
+            <p class="section-desc">Derrière chaque scan d'AuditSphere se cache un moteur d'analyse de pointe qui scrute plus de 500 points de contrôle critiques :</p>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="icon-wrapper"><i class="fa-solid fa-bug"></i></div>
+                    <h4>Détection des vulnérabilités</h4>
+                    <p>Identification instantanée des ports ouverts, des certificats SSL obsolètes et des failles de configuration DNS.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="icon-wrapper"><i class="fa-solid fa-heart-pulse"></i></div>
+                    <h4>Score de Santé Cyber</h4>
+                    <p>Visualisez votre niveau de risque global grâce à l'indice de sécurité AuditSphere, dynamique et facile à comprendre.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="icon-wrapper"><i class="fa-solid fa-list-check"></i></div>
+                    <h4>Guide de remédiation</h4>
+                    <p>Ne vous contentez pas de trouver les problèmes. Recevez des instructions étape par étape pour corriger chaque faille détectée.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="icon-wrapper"><i class="fa-solid fa-chart-line"></i></div>
+                    <h4>Surveillance continue</h4>
+                    <p>Suivez l'évolution de votre sécurité dans le temps pour garantir une protection durable contre les nouvelles menaces.</p>
+                </div>
+            </div>
+
+            <div class="fact-box">
+                <i class="fa-regular fa-lightbulb fact-icon"></i>
+                <div>
+                    <strong>Le saviez-vous ?</strong> 80% des intrusions réussies exploitent des failles qui auraient pu être détectées par un simple audit préventif. Avec AuditSphere, reprenez le contrôle de votre périmètre numérique dès aujourd'hui.
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>

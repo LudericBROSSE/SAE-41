@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AuditSphere - Résultats</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style_results.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Librairie HTML2PDF pour générer le rapport -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+</head>
+
+<body>
+    <header class="header simple hide-in-pdf">
+        <a href="index.html" class="home-link"><i class="fas fa-home home-icon"></i></a>
+        <div class="top-bar">AUDITSPHERE</div>
+    </header>
+
+    <main class="result-main" id="report-content">
+        <!-- Entête du rapport PDF (caché à l'écran) -->
+        <div class="report-header-print">
+            <h1>RAPPORT D'AUDIT DE SÉCURITÉ</h1>
+            <p>Score évalué selon les recommandations de l'ANSSI</p>
+        </div>
+
+        <h1 class="result-title hide-in-error">Vos résultats pour <span id="target-url-display" class="url-highlight"></span></h1>
+        
+        <!-- WRAPPER SUCCES (Photo 2) -->
+        <div id="success-wrapper">
+            <div class="result-card">
+                <div class="result-content">
+
+                    <div class="stats-col">
+                        <h2 id="domain-name-display">Analyse en cours...</h2>
+                        <p id="scan-date-display"></p>
+                        
+                        <div class="progress-stats">
+                            <div class="stat-row">
+                                <i class="fa-solid fa-circle-check" style="color: #22c55e;"></i>
+                                <span class="stat-label">Correct</span>
+                                <span class="pdf-pct" id="pdf-pct-correct" style="color: #22c55e;"></span>
+                                <div class="progress-bar-container">
+                                    <div class="progress-bar bg-green" id="bar-correct" style="width: 0%;"></div>
+                                </div>
+                            </div>
+                            <div class="stat-row">
+                                <i class="fa-solid fa-circle-exclamation" style="color: #eab308;"></i>
+                                <span class="stat-label">A améliorer</span>
+                                <span class="pdf-pct" id="pdf-pct-warning" style="color: #eab308;"></span>
+                                <div class="progress-bar-container">
+                                    <div class="progress-bar bg-yellow" id="bar-warning" style="width: 0%;"></div>
+                                </div>
+                            </div>
+                            <div class="stat-row">
+                                <i class="fa-solid fa-circle-xmark" style="color: #ef4444;"></i>
+                                <span class="stat-label">Erreurs</span>
+                                <span class="pdf-pct" id="pdf-pct-error" style="color: #ef4444;"></span>
+                                <div class="progress-bar-container">
+                                    <div class="progress-bar bg-red" id="bar-error" style="width: 0%;"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="chart-col">
+                        <div class="donut-wrapper">
+                            <div class="donut-chart" id="score-chart"></div>
+                            <span id="center-score"></span>
+                        </div>
+                        <div class="pdf-score-text" id="pdf-score-text" style="display:none; font-size: 2rem; font-weight: 800; margin-top: 10px; text-align: center;"></div>
+                    </div>
+                </div>
+                
+                <div class="result-card-footer hide-in-pdf">
+                    <button class="pdf-btn" id="download-pdf">
+                        Télécharger PDF <i class="fa-solid fa-chevron-down"></i>
+                    </button>
+                    <span class="ready-text">Votre Rapport complet est prêt!</span>
+                </div>
+            </div>
+
+            <div id="tools-used-display" style="margin-top: 20px; font-size: 0.95rem; color: #64748b; display: none; text-align: center;">
+                <strong><i class="fas fa-toolbox"></i> Outils utilisés :</strong> <span id="tools-list"></span>
+            </div>
+
+            <!-- Section vulgarisée -->
+            <div class="lambda-explanations" id="lambda-explanations" style="clear: both; margin-top: 40px;">
+                <h3 class="explanations-title">DÉTAILS ET EXPLICATIONS :</h3>
+                <ul id="vulnerabilities-list" style="list-style: none; padding: 0; margin-bottom: 20px; color: #334155; display: none;">
+                    <li>Analyse en cours...</li>
+                </ul>
+                <div id="explanations-list">
+                    <!-- Les failles avec descriptions simples seront affichées ici via JS -->
+                </div>
+                <p class="disclaimer-pdf" style="page-break-inside: avoid;">
+                    <em>* Note : Cet audit est une évaluation simplifiée basée sur des critères de sécurité courants. Il est
+                        recommandé de consulter un expert pour corriger ces vulnérabilités.</em>
+                </p>
+            </div>
+        </div>
+
+        <!-- WRAPPER ERREUR (Photo 1) - Caché par défaut -->
+        <div id="error-wrapper" style="display: none;">
+            <div class="error-red-box">
+                Nous avons rencontré un problème lors de l'analyse de ce site.
+            </div>
+            <div class="error-white-box">
+                <p style="text-align: center; margin-bottom: 30px; font-size: 1.1rem; color: #475569;">
+                    Nous avons essayé de faire des requêtes aux urls suivantes et tous ont renvoyé l'erreur suivante :
+                </p>
+                
+                <div class="error-url-list" id="error-url-list">
+                    <!-- Généré dynamiquement en JS -->
+                </div>
+
+                <p style="margin-top: 30px; font-size: 1rem; color: #475569; line-height: 1.6;">
+                    Le code d'erreur 403 se produit lorsque le serveur du site analysé limite l'accès de notre robot à la page. Souvent, cette erreur se produit quand il ya un pare-feu en place.
+                </p>
+            </div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
