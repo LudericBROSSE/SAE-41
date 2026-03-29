@@ -1,0 +1,6 @@
+docker run -d -p 8081:80 --name test-tranquille nginx:alpine
+
+docker run -d -p 8082:80 --name test-mid -e PMA_ARBITRARY=1 phpmyadmin
+
+docker run -d -p 8083:80 --name test-faille vulnerables/web-dvwa
+docker run -d -p 8080:3000 --name ultra-faille bkimminich/juice-shop
