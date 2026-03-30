@@ -50,4 +50,4 @@ Notre cartographie des risques suit logiquement la construction d'une applicatio
 
 
 # Lancer l'orchestrateur
-[Commande de lancement]
+python3 server.py
